@@ -1,0 +1,63 @@
+<h1 class="display-1 text-center">{{ titol }}</h1>
+<hr>
+
+<h3 *ngIf="enviat" class="display-4 text-center">
+    Missatge Enviat OK!<br>
+    {{ this.contacte | json }}</h3>
+
+<div class="row justify-content-center">
+
+    <div class="col-sm-6 bg-secondary p-2 m-4 border">
+    
+        <form #newContact="ngForm" (ngSubmit)="onSubmit(newContact)" >
+
+            <button type="submit" class="btn btn-primary mt-3"
+            [disabled]="!newContact.form.valid">Envia !</button>
+            <br>
+            <!--{{ newProject.form.valid }}-->
+ 
+            <div class="form-group md-6 mt-3">
+                <label>Nom</label>
+                <input name="name" type="text" class="form-control" 
+                #nom="ngModel"[(ngModel)]="contacte.nom"
+                required>
+            
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="nom.touched && !nom.valid">
+                * FATAL ERROR * obligatori
+                </div>
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Mail</label>
+                <input name="mail" type="text" class="form-control" 
+                #mail="ngModel"[(ngModel)]="contacte.mail"
+                required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="mail.touched && !mail.valid">
+                * FATAL ERROR * mail format vàlid
+                </div>
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Missatge:</label>
+                
+                <textarea name="missatge" class="form-control" 
+                rows="3" minlength="25"
+                #mis="ngModel"[(ngModel)]="contacte.missatge"
+                required></textarea>
+
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="mis.touched && !mis.valid">
+                * FATAL ERROR * mínim 25 caràcters
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+

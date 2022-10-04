@@ -1,0 +1,42 @@
+<!-- <p>projects works!</p> -->
+
+<!--mostra valors-->
+<!--
+<div *ngIf="projects != null && !error ; else noprojects ">
+{{ projects }}
+</div>
+-->
+
+<!--<h1 *ngFor="let el of projects">{{el._id}}</h1>-->
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div *ngFor="let project of projects" class="col">
+            <div class="card h-100">
+
+                <img src="{{ url + project.image }}" 
+                class="card-img-top" alt="..."
+                *ngIf="project.image !='null'">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.name }} </h5>
+                    <p class="card-text">{{ project.langs }}</p>
+                    <!--<a [routerLink]="['/project/', project._id]" class="btn btn-primary">Veure Detall</a>-->
+                    <a href="/project/{{project._id}}" class="btn btn-primary">Veure Detall</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{ project._id }}</small>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noprojects>
+    <br>
+    <div *ngIf="error">
+    <h1 class="text-danger">* FATAL ERROR * Projects </h1><br>
+    <h2 class="text-danger">{{error.status}} {{error.name}} </h2>
+    </div>
+</ng-template>

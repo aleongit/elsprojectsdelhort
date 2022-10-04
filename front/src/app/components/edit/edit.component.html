@@ -1,0 +1,100 @@
+<!-- UTILITZO TEMPLATE CREATE
+
+<h1 class="display-1 text-center">{{ titol }}</h1>
+<hr>
+<h2 class="display-2 text-center text-success">{{project_ok}}</h2>
+<h2 class="display-2 text-center text-danger">{{project_fatal}}</h2>
+
+<div class="row justify-content-center">
+
+    <div class="col-sm-6 bg-secondary p-2 m-4 border">
+    
+        <form #editProject="ngForm" (ngSubmit)="onSubmit(editProject)">
+
+            <button type="submit" class="btn btn-primary mt-3"
+            [disabled]="!editProject.form.valid">Edita Project!</button>
+            <br>
+-->
+
+            <!--{{ newProject.form.valid }}-->
+<!--
+            <div class="form-group md-6 mt-3">
+                <label>Nom</label>
+                <input name="name" type="text" class="form-control" 
+                #nom="ngModel"[(ngModel)]="project.name"
+                required>
+            
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="nom.touched && !nom.valid">
+                * FATAL ERROR * obligatori
+                </div>
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Descripció</label>
+                
+                <textarea name="description" class="form-control" 
+                rows="3" minlength="25"
+                #des="ngModel"[(ngModel)]="project.description"
+                required></textarea>
+
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="des.touched && !des.valid">
+                * FATAL ERROR * mínim 25 caràcters
+                </div>
+
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Categoria</label>
+                <input name="category" type="text" class="form-control"
+                #cat="ngModel"[(ngModel)]="project.category"
+                required pattern="[a-z]+">
+
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="cat.touched && !cat.valid">
+                * FATAL ERROR * només abc
+                </div>
+
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Llenguatge</label>
+                <select class="form-control" name="langs" multiple 
+                #llen="ngModel"[(ngModel)]="project.langs"
+                required pattern=".{1,}">
+                    <option [value]="el" *ngFor="let el of langs">
+                        {{el}}</option>
+                </select>
+                
+                <div class=" rounded mt-1 font-monospace bg-danger bg-gradient"
+                *ngIf="llen.touched && !llen.valid">
+                * FATAL ERROR * obligatori
+                </div>
+
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Any</label>
+                <input name="year" type="number" class="form-control"
+                [(ngModel)]="project.year"
+                disabled>
+            </div>
+
+            <div class="form-group md-6 mt-3">
+                <label>Imatge</label>
+                <div class="m-1">
+                    <img id="pre" src="{{ img_pre }}" class="img_petita">
+                </div>
+                <input name="img" type="file" class="form-control"
+                
+                (change)="fileChangeEvent($event)">
+            </div>
+            <br>
+   
+        </form>
+
+    </div>
+
+</div>
+-->

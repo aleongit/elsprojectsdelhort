@@ -1,0 +1,257 @@
+<header>
+
+<!-- menú superior_________________________________________________________________________ -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" [routerLink]="['/']" >Els Projects de l'hort</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          
+            <li class="nav-item">
+              <a class="nav-link disabled" >Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" >Join in</a>
+            </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href ="#que">Què fem ?</a>
+            </li>
+
+        </ul>
+          <span class="navbar-text text-white">V 1.0 FEB22</span>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+<main>
+  
+  <!-- carousel __________________________________________________________________________________________ -->
+  <div id="myCarousel" class="carousel slide bg-dark" data-bs-ride="carousel">
+    <!--
+    <ol class="carousel-indicators">
+      <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    </ol>-->
+    <div class="carousel-inner ">
+      <div class="carousel-item active">
+        <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+        <div class="container ">
+          <div class="carousel-caption text-start text-light" >
+            <h1 class="display-1">El Mean Stack de l'hort</h1>
+            <h2 class ="display-6">Noding hortalisses</h2>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="display-2">Fruites i verdures angularitzades</h1>
+            <h2 class ="display-6">JavaScripza la teva hortalissa preferida</h2>
+            <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <!--<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>-->
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 class="display-1">Pages@s multiprojects</h1>
+            <h2 class ="display-6">Registra't i projecta el teu hort</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+  
+  <!-- menú projects ____________________________________________________ -->
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" >Welcome :)</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/about']"
+                                  [routerLinkActive]="['active']">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/projects']"
+                                  [routerLinkActive]="['active']">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/create']"
+                                  [routerLinkActive]="['active']">Crear</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/contact']"
+                                  [routerLinkActive]="['active']">Contacte</a>
+            </li>
+          </ul>
+
+          <span class="navbar-text text-dark">
+            <a class="nav-link disabled" href="/logout">Logout</a>
+          </span>
+
+
+          <!--
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Cerca" aria-label="Search">
+            <button type="submit" class="btn btn-outline-success ">Cerca!</button>
+          </form> -->
+
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <!-- contenidor principal _______________________________________________ -->
+  <div class="container-fluid p-4">
+
+      <!-- main _______________________________________________________________-->
+      <div class= 'main'>
+        <router-outlet></router-outlet>
+      </div>
+      
+  </div>
+  
+  <!-- què fem ? ________________________________________________________ -->
+  <div class="container-fluid">
+    <div class="container-fluid p-4 mb-2 border">
+  
+    <h2 id = "que" class="p-2 bg-dark text-light">Què fem ?</h2>
+    
+    <p class="fw-bold pt-3">Fem un projecte Angular contra Node.js</p>
+      <ul>
+        <li>Cal fer el projecte segons la presentació amb el backend en node que has desenvolupat.</li>
+      </ul>
+      <!-- Divider--> <hr class="my-4" />
+  
+     <p class="fw-bold pt-3">Punts:</p>
+      <ul>
+        <li>Fes un projecte nou en Angular</li>
+        <li>Components (en carpeta anomenada components):
+          <ul>
+            <li>about</li>
+            <li>projects</li>
+            <li>create</li>
+            <li>contact</li>
+          </ul>
+        </li>
+        <li>Routing. Associa les següents rutes a component corresponent: Comprova el funcionament</li>
+        <li>Fes el menú</li>
+        <li>Estils CSS. Menú superior, un peu de pàgina amb la vostra informació, i una caixa central on hi
+          haurà el contingut.</li>
+        <li>About. En aquest component hi ha 3 propietats que es veuen en la pàgina, títol, subtítol i
+          email</li>
+        <li>Crear Projecte. Arrencar el backend de node i comprovar que funciona</li>
+        <li>Fer el model, en funció dels camps de la BBDD</li>
+        <li>Fes l'arxiu de configuració GLOBAL</li>
+        <li>Fer el servei. De manera anàloga com havíem fet el peticions service, recorda afegir-lo al app.module.ts</li>
+        <li>Fer el component create associat al model i servei</li>
+        <li>Fer el formulari create, amb two way data binding</li>
+        <li>Fer la validació del formulari
+          <ul>
+            <li>Camps obligatoris: name. description, category i langs</li>
+            <li>botó enviar disabled fins que les dades no siguin vàlides</li>
+          </ul>
+        </li>
+        <li>Desar dades al Backend i a la BBDD. 
+          <ul>
+            <li>Fes el mètode saveProject en el project .service cap a ruta BACKEND</li>  
+            <li>En el controlador crida al mètode saveProject a onSubmit</li> 
+          </ul>
+        </li>
+        <li>saveProject en el project.service.ts</li>
+        <li>Comprova que funciona. Pots fer un console.log de la response, comprova la network i la BBDD</li>
+        <li>Comprova les peticions AJAX</li>
+        <li>Comprova la BBDD</li>
+        <li>Pujar arxius: Fer el servei</li>
+        <li>Pujar arxius: capturar l'arxiu en el formulari</li>
+        <li>Pujar arxius: fer el mètode fileChangeEvent</li>
+        <li>Pujar arxius: modifica l'onSubmit</li>
+        <li>Pujar arxius: Comprova el result, la BBDD i la carpeta uploads del BACKEND</li>
+        <li>Llistat de projectes (component projects)
+          <ul>
+            <li>Fes un mètode getProjects, el project.service.ts que retorni tots els projectes, per
+              tant, no li passem cap paràmetre. Recorda (o busca) la ruta del backend</li>
+            <li>Al component projects importa el servei, el model, afegeix al decorador el
+              ProjectService com a provider, i injecta'l al constructor</li>
+            <li>Fes un mètode getProjects, que faci la crida al servei i comprova que retorna un
+              objecte amb un array de projectes (console.log de la response)</li>
+          </ul>
+        </li>
+        <li>Mètode en el BackEnd: getImage. Afegeix el següent mètode al backend amb la ruta corresponent</li>
+        <li>Comprova que funciona amb alguna imatge: http://192.168.1.50:3700/api/get-image/hegAfu-TmmAaLG1j539xFQVx.png</li>
+        <li>Fem el llistat de projectes. Llista de cada projecte el nom, els llenguatges i la imatge</li>
+        <li>Detall de projecte (fes un component detall)
+          <ul>
+            <li>Fes el component detail i la ruta corresponent (/detail:id) que li passarem l'id del
+              projecte com a paràmetre. Aquesta ruta la cridaràs des del llistat de projectes amb
+              un link en cada projecte, i també des de la respota que obtens quan crees un
+              projecte.</li>
+            <li>Al project.service.ts fes un mètode getProject(id) que retorni un sol projecte del
+              BackEnd</li>
+            <li>Al component detail hauràs de recollir l'id que ens arriba per la url</li>
+            <li>Al component detail fes el mètode getProject(id) que fa la crida al mètode del
+              servei</li>
+            <li>Mostra el detall del projecte en la vista</li>
+          </ul> 
+        </li>
+        <li>Elimina projecte. En el detall del projecte apareixen 2 botons, editar i eliminar. Dóna funcionalitat a eliminar:
+          <ul>
+            <li>En el project.service.ts fes un mètode deleteProject(id) que elimina el projecte
+              de la BBDD a través del BackEnd</li>
+            <li>Al component detail fes el mètode deleteProject(id) que fa la crida al mètode del
+              servei</li>
+            <li>Un cop eliminat el projecte redirigeix a la ruta /projects</li>
+            <li>Comprova que funciona</li>
+            <li>Afegeix una confirmació de l'acció</li>
+          </ul>
+        </li>
+        <li>Editar Projecte
+          <ul>
+          <li>Fes un component edit per editar el projecte</li>
+          <li>De fet és molt semblant a crear projecte, i fins hi tot pots aprofitar la vista de crear
+          projecte.</li>
+          <li>També recorda a fer el mètode updateProject per put a project.service.ts</li>
+          <li>Comprova que funciona correctament</li>
+         </ul>
+        </li>
+       <li>Opcional Contacte i Fi. I ja ho tindríem</li> 
+      </ul>
+
+    </div>
+  </div>
+  
+  <!-- footer -->
+  <footer class="py-4 bg-dark text-white-50 p-3">
+    <h5 class="float-end"><a class="btn btn-primary" href="#" role="button">Puja</a></h5>
+    <h5>&copy; 2021-22 Aleix Leon - Els projects de l'hort - <a class="link-light" href="mailto:hola@elgestordelhort.com"> hola@projectsdelhort.com </a> &middot; <a class="link-light" href="#">Privacitat</a> &middot; <a class="link-light" href="#">Termes i Condicions</a></h5>
+  </footer>
+  
+</main>
+
