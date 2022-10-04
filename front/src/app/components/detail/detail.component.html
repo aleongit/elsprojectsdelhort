@@ -1,53 +1,83 @@
 <!--<p>detail works!</p>-->
-
-<div class="d-flex justify-content-center mb-4">
-    <a href="/project/edit/{{project._id}}" class="btn btn-warning m-2 px-4">Editar</a>
+<ng-template [ngIf]="project">
+  <div class="d-flex justify-content-center mb-4">
+    <a href="/project/edit/{{ project._id }}" class="btn btn-warning m-2 px-4"
+      >Editar</a
+    >
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-danger m-2 px-4" data-bs-toggle="modal" data-bs-target="#borrar">
-        Borrar
+    <button
+      type="button"
+      class="btn btn-danger m-2 px-4"
+      data-bs-toggle="modal"
+      data-bs-target="#borrar"
+    >
+      Borrar
     </button>
-  
+
     <!-- Modal -->
-    <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="labelborrar" aria-hidden="true">
-        <div class="modal-dialog">
+    <div
+      class="modal fade"
+      id="borrar"
+      tabindex="-1"
+      aria-labelledby="labelborrar"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="labelborrar">Eliminem projecte ?
-              </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            Segur que vols eliminar el projecte ?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">És de sabis rectificar</button>
-            <button (click)="deleteProject()"  type="button" class="btn btn-primary">Elimina!</button>
-            </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="labelborrar">Eliminem projecte ?</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Segur que vols eliminar el projecte ?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              És de sabis rectificar
+            </button>
+            <button
+              (click)="deleteProject()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Elimina!
+            </button>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
+  </div>
 
-</div>
-
-<div class="row justify-content-center">
-    <div class="col-6 bg-secondary p-2 mx-4 ">
-        <div class="card text-center">
-            
-            <div class="card-header">
-            {{project.name}}
-            </div>
-            <div class="row justify-content-center p-4">
-                <img class="card-img-top w-50" src="{{ url + project.image }}" alt="">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{project.category}}</h5>
-                <p class="card-text">{{project.description}}</p>
-                <p class="card-text">{{project.langs}}</p>
-                <p class="card-text">{{project.year}}</p>
-            </div>
-            <div class="card-footer text-muted">
-                {{project._id}}
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-6 bg-secondary p-2 mx-4">
+      <div class="card text-center">
+        <div class="card-header">
+          {{ project.name }}
         </div>
+        <div class="row justify-content-center p-4">
+          <img
+            class="card-img-top w-50"
+            src="{{ url + project.image }}"
+            alt=""
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ project.category }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <p class="card-text">{{ project.langs }}</p>
+          <p class="card-text">{{ project.year }}</p>
+        </div>
+        <div class="card-footer text-muted">
+          {{ project._id }}
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</ng-template>
