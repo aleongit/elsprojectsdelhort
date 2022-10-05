@@ -19,13 +19,13 @@ Petita gestió de projectes CRUD (Create, Read, Update and Delete) amb Backend N
 - git clone https://github.com/aleongit/elsprojectsdelhort.git
 - cd elsprojectsdelhort
 
+### Run Back
+- cd elsprojectsdelhort/back
+- npm install
+- npm start
+
 ### Run Front
-- cd front
+- cd elsprojectsdelhort/front
 - npm install
 - ng serve
 - http://localhost:4200/
-
-### Run Back
-- cd back
-- npm install
-- npm start
