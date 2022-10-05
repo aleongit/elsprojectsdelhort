@@ -20,12 +20,12 @@ Petita gestió de projectes CRUD (Create, Read, Update and Delete) amb Backend N
 - cd elsprojectsdelhort
 
 ### Run Front
-cd front
-npm install
-ng serve
-http://localhost:4200/
+- cd front
+- npm install
+- ng serve
+- http://localhost:4200/
 
 ### Run Back
-cd back
-npm install
-npm start
+- cd back
+- npm install
+- npm start
