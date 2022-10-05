@@ -2,10 +2,10 @@
 
 Exemple d'aplicació Mean Stack:
 
-**M**ongoDB — document database
-**E**xpress(.js) — Node.js web framework
-**A**ngular(.js) — a client-side JavaScript framework
-**N**ode(.js) — the premier JavaScript web server
+- **M**ongoDB — document database
+- **E**xpress(.js) — Node.js web framework
+- **A**ngular(.js) — a client-side JavaScript framework
+- **N**ode(.js) — the premier JavaScript web server
 
 Petita gestió de projectes CRUD (Create, Read, Update and Delete) amb Backend Node.js sota MongoDB, FrontEnd Angular i maquetació responsive amb Bootstrap.
 
