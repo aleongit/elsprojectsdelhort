@@ -33,5 +33,3 @@ Petita gestió de projectes CRUD (Create, Read, Update and Delete) amb Backend N
 
 
 ![Screenshot](screenshots/1.png)
-
-![Screenshot](screenshots/2.png)
