@@ -55,6 +55,7 @@ export class EditComponent implements OnInit {
     this.langs = Global.langs; //importem de Global
     this.project = new Project( '', '', '', '', [''], this.any_actual,'')
     
+    
     //per imatge
     this.img_pre= '';
     this.url = _projectService.url + '/get-image/' 
@@ -113,24 +114,30 @@ export class EditComponent implements OnInit {
     this._projectService.editProject(this.id,this.project).subscribe(
       {
         next: (res) => {
+        console.log('resposta edit!');
         console.log(res);
         this.project_updated = res;
 
         //pujar fitxer
         //node: router.post('/upload-image/:id', multipartMiddleware, ProjectController.uploadImage);
+        
+        if (res && this.fitxers_upload) {
         this._uploadService.makeFileRequest(
           this._uploadService.url + '/upload-image/' + this.project_updated.project._id,
                 [],                   //opcional en blanc
                 this.fitxers_upload,  //array files
                 'image'               //nom del camp model que rep node
                 ).then ( (result: any) => {
+                  console.log('imatge upload!')
                   console.log(result);
                 });
-        
+            }
         form.reset(); //reset form
         this.project_ok = 'Projecte editat correctament!';
         //this.router.navigate(['/'])
-        window.location.href = '/project/'+ this.id;
+        //window.location.href = '/project/'+ this.id;
+
+        
 
       },
         error: (err) => {
@@ -138,7 +145,9 @@ export class EditComponent implements OnInit {
         this.project_fatal = '* FATAL ERROR * al guardar projecte';
       },
         complete: () => {
-          console.info('complet!'); 
+          console.info('complet!');
+          //window.location.href = '/project/'+ this.id
+          this._router.navigate([`project/${this.id}`])
         }
       }
       );

@@ -86,15 +86,16 @@ export class CreateComponent implements OnInit {
         form.reset(); //reset form
         this.project_ok = 'Projecte afegit correctament!';
         //this.router.navigate(['/'])
-        window.location.href = '/project/'+ this.project_desat.project._id;
-
+        
       },
         error: (err) => {
         console.log(err); 
         this.project_fatal = '* FATAL ERROR * al guardar projecte';
       },
         complete: () => {
-          console.info('complet!'); 
+          console.info('complet!');
+          //window.location.href = '/project/'+ this.project_desat.project._id;
+          this.router.navigate([`project/${this.project_desat.project._id}`])
         }
       }
       );

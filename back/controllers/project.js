@@ -160,6 +160,8 @@ let controller = {
   },
 
   uploadImage: (req, res) => {
+    console.log('pujant imatge!');
+    console.log(req.files);
     let projectID = req.params.id;
     let fileName = "* FATAL ERROR * imatge no pujada";
 
@@ -205,6 +207,7 @@ let controller = {
           });
         });
       }
+
       //error req.files
     } else {
       return res.status(500).send({
